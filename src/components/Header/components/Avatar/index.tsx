@@ -12,7 +12,9 @@ export function Avatar() {
         alt="Foto de perfil do Vinicius"
       />
       <AvatarRadix.Fallback
-        className="text-sky-950 text-lg font-sans font-extrabold"
+        className="w-[5.5rem] h-[5.5rem] rounded-full border-2 border-sky-950  
+        flex justify-center items-center
+        text-sky-950 text-2xl font-sans font-extrabold"
         delayMs={600}
       >
         VF

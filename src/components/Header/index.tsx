@@ -24,7 +24,7 @@ export default function Header() {
           sentimento de dono e exercendo o feedback.
         </p>
         <p className="text-sm italic text-gray-500 mt-2">
-          Você pode me chamar de Gus. 😁
+          Você pode me chamar de Vini. 😁
         </p>
       </div>
     </header>
