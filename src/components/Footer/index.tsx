@@ -5,7 +5,7 @@ export default function Footer() {
     'text-gray-500 hover:text-gray-800 transaction-all ease-in-out duration-200ms'
 
   return (
-    <footer className="flex justify-between items-center pt-4 border-t border-solid border-t-gray-200">
+    <footer className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center pt-4 border-t border-solid border-t-gray-200">
       <div>
         <h3 className="text-gray-800 font-bold">Vini!</h3>
         <p className="text-xs text-gray-500">viniciusferreiradev07@gmail.com</p>

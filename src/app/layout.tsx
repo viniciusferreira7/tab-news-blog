@@ -31,10 +31,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="pt-br"
       className={`${poppins.className} ${courierPrime.className}`}
     >
-      <body className="lg:grid lg:grid-cols-[24.25rem_1fr] xl:grid-cols-[34.25rem_1fr]">
+      <body className="lg:grid lg:grid-cols-[24.25rem_1fr] xl:grid-cols-[34.25rem_1fr] ">
         <Header />
-        <div className="p-10">
-          <main>{children}</main>
+        <div className="lg:p-10 p-3">
+          <main className="lg:h-[calc(100vh-8.556rem)] h-[calc(100vh-23.55rem)]">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>
