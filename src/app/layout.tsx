@@ -3,6 +3,7 @@ import { Poppins, Courier_Prime as CourierPrime } from 'next/font/google'
 import { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,9 +31,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="pt-br"
       className={`${poppins.className} ${courierPrime.className}`}
     >
-      <body>
+      <body className="lg:grid lg:grid-cols-[24.25rem_1fr] xl:grid-cols-[34.25rem_1fr]">
         <Header />
-        {children}
+        <div className="p-10">
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
