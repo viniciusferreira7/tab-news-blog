@@ -3,7 +3,7 @@ import { Avatar } from './components/Avatar'
 export default function Header() {
   return (
     <header
-      className="lg:h-screen pt-8 pb-6 lg:py-0
+      className="lg:h-screen pt-8 pb-6 px-4 lg:py-0
       bg-gray-100 flex flex-col items-center justify-center"
     >
       <div className="w-full justify-center flex gap-3 items-center">

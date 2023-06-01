@@ -1,14 +1,18 @@
-import { getAllPosts } from './services/tabnews'
+import { format } from 'date-fns'
+import { getAllPosts } from '../services/tabnews'
 
 export default async function Home() {
-  const posts = await getAllPosts()
+  const [post] = await getAllPosts()
 
-  console.log(posts)
+  const formatDateOfLastPost = format(post.created_at, 'dd.MM.yyyy')
+
   return (
     <article className="w-full">
-      <h4 className="text-sm text-gray-500">24.11.2022 - Última Postagem...</h4>
-      <h1 className="text-4xl text-gray-900 font-bold w-full max-w-[40.375rem]">
-        Uma Boa Maneira de Organizar Suas Branches, Commits e Pull Requests
+      <h4 className="text-sm text-gray-500">
+        {formatDateOfLastPost} - Última Postagem...
+      </h4>
+      <h1 className=" font-sans text-4xl text-gray-900 font-bold w-full max-w-[40.375rem]">
+        {post.title}
       </h1>
     </article>
   )
