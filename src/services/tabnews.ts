@@ -27,7 +27,12 @@ export async function getAllPosts() {
 }
 
 export async function getPostBySlug(slug: string) {
-  const response = await fetch(`${baseUrl}contents/guscsales/${slug}`)
+  const response = await fetch(`${baseUrl}contents/guscsales/${slug}`, {
+    cache: 'force-cache',
+    next: {
+      revalidate: 60 * 60 * 24 * 5, // 5 days
+    },
+  })
 
   let post = (await response.json()) as Post
 

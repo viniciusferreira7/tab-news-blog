@@ -1,19 +1,28 @@
 import { format } from 'date-fns'
-import { getAllPosts } from '../services/tabnews'
+import { getAllPosts, getPostBySlug } from '../services/tabnews'
+import RenderMarkdown from '@/components/RenderMarkdown'
 
 export default async function Home() {
   const [post] = await getAllPosts()
 
-  const formatDateOfLastPost = format(post.created_at, 'dd.MM.yyyy')
+  const contentOfPost = await getPostBySlug(post.slug)
+
+  const formatDateOfLastPost = format(contentOfPost.created_at, 'dd.MM.yyyy')
 
   return (
     <article className="w-full">
-      <h4 className="text-sm text-gray-500">
+      <h4 className="text-sm text-gray-500 mb-2">
         {formatDateOfLastPost} - Última Postagem...
       </h4>
-      <h1 className=" font-sans text-4xl text-gray-900 font-bold w-full max-w-[40.375rem]">
-        {post.title}
+      <h1
+        className=" font-sans lg:text-3xl text-lg text-gray-900 font-bold 
+        w-full max-w-[40.375rem] lg:mb-12 mb-4"
+      >
+        {contentOfPost.title}
       </h1>
+      <RenderMarkdown className="bg-sky-500 h-full overflow-hidden">
+        {contentOfPost.body}
+      </RenderMarkdown>
     </article>
   )
 }
