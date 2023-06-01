@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="pt-br"
-      className={`${poppins.className} ${courierPrime.className}`}
+      className={`${poppins.variable} ${courierPrime.variable}`}
     >
       <body className="lg:grid lg:grid-cols-[24.25rem_1fr] xl:grid-cols-[34.25rem_1fr] ">
         <Header />
