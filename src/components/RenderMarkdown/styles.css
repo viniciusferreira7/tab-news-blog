@@ -1,0 +1,23 @@
+.renderMarkdown {
+  @apply text-gray-700
+}
+
+.renderMarkdown h2 {
+  @apply text-2xl font-bold my-8
+}
+
+.renderMarkdown p {
+  @apply mb-3
+}
+
+.renderMarkdown img {
+  @apply rounded-lg mx-auto
+}
+
+.renderMarkdown pre {
+  @apply bg-gray-200 rounded-md p-4 text-gray-800 my-4
+}
+
+.renderMarkdown a{
+  @apply text-blue-500
+}
