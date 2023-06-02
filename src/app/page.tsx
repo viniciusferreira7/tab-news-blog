@@ -21,12 +21,6 @@ export default async function Home() {
         {contentOfPost.title}
       </h1>
       <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
       <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-bottom-white" />
     </article>
   )
