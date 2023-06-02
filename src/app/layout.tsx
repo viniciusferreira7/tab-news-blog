@@ -7,7 +7,6 @@ import Footer from '@/components/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],
-  display: 'swap',
   weight: ['400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-poppins-sans',
@@ -15,7 +14,6 @@ const poppins = Poppins({
 
 const courierPrime = CourierPrime({
   subsets: ['latin'],
-  display: 'swap',
   weight: '400',
   variable: '--font-courier-prime-mono',
 })
@@ -37,6 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main className="lg:h-[calc(100vh-8.556rem)] h-[calc(100vh-23.55rem)]">
             {children}
           </main>
+          {/* @ts-expect-error Server Component */}
           <Footer />
         </div>
       </body>
