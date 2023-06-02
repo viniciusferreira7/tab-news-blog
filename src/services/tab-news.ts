@@ -4,7 +4,6 @@ const baseUrl = 'https://www.tabnews.com.br/api/v1/'
 
 export async function getAllPosts() {
   const response = await fetch(`${baseUrl}contents/guscsales`, {
-    cache: 'force-cache',
     next: {
       revalidate: 60 * 60 * 24 * 2, // 2 days
     },
@@ -21,14 +20,13 @@ export async function getAllPosts() {
     return b.created_at.getTime() - a.created_at.getTime()
   })
 
-  posts = posts.filter((post) => !!post.title)
+  posts = posts.filter((post) => !post.parent_id)
 
   return posts
 }
 
 export async function getPostBySlug(slug: string) {
   const response = await fetch(`${baseUrl}contents/guscsales/${slug}`, {
-    cache: 'force-cache',
     next: {
       revalidate: 60 * 60 * 24 * 5, // 5 days
     },

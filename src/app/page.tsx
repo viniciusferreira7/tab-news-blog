@@ -1,5 +1,5 @@
 import { format } from 'date-fns'
-import { getAllPosts, getPostBySlug } from '../services/tabnews'
+import { getAllPosts, getPostBySlug } from '../services/tab-news'
 import RenderMarkdown from '@/components/RenderMarkdown'
 
 export default async function Home() {
