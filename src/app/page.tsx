@@ -10,7 +10,7 @@ export default async function Home() {
   const formatDateOfLastPost = format(contentOfPost.created_at, 'dd.MM.yyyy')
 
   return (
-    <article className="w-full h-full relative overflow-hidden">
+    <article className="lg:h-[calc(100vh-8.856rem)] h-[calc(100vh-23.55rem)] w-full relative overflow-hidden">
       <h4 className="text-sm text-gray-500 mb-2">
         {formatDateOfLastPost} - Última Postagem...
       </h4>

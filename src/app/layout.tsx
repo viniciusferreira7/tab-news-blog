@@ -32,9 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="lg:grid lg:grid-cols-[24.25rem_1fr] xl:grid-cols-[34.25rem_1fr] ">
         <Header />
         <div className="lg:p-10 p-3">
-          <main className="lg:h-[calc(100vh-8.556rem)] h-[calc(100vh-23.55rem)]">
-            {children}
-          </main>
+          <main>{children}</main>
           {/* @ts-expect-error Server Component */}
           <Footer />
         </div>
