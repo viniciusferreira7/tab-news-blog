@@ -5,7 +5,7 @@ export default async function Blog() {
   const posts = await getAllPosts()
 
   return (
-    <article className="lg:h-[calc(100vh-8.856rem)] w-full">
+    <article className="lg:h-[calc(100vh-8.856rem)] overflow-auto w-full">
       <header className="mb-7 lg:mb-12">
         <h1 className="text-3xl lg:text-4xl font-bold">Blog</h1>
       </header>

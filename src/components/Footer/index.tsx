@@ -1,6 +1,6 @@
 import { getAllPosts, getPostBySlug } from '@/services/tab-news'
-import Link from 'next/link'
 import React from 'react'
+import NavigationPages from './component/NavigationPages'
 
 export default async function Footer() {
   const [post] = await getAllPosts()
@@ -43,20 +43,7 @@ export default async function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex items-center">
-          <Link
-            className="py-2 px-3 text-sm text-blue-400 hover:text-blue-600 transition-all duration-200 ease-in-out"
-            href="/blog"
-          >
-            Ver Outros Posts
-          </Link>
-          <Link
-            className="py-3 px-4 text-sm font-bold text-gray-800 bg-gray-200 hover:bg-gray-300 rounded-sm transition-all duration-200 ease-in-out"
-            href={`/blog/${contentOfPost.slug}`}
-          >
-            Ver Conteúdo
-          </Link>
-        </div>
+        <NavigationPages slugOfPost={contentOfPost.slug} />
       </nav>
     </footer>
   )
