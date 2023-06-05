@@ -1,6 +1,5 @@
-import RenderMarkdown from '@/components/RenderMarkdown'
+import PostDetails from '@/components/PostDetails'
 import { getPostBySlug } from '@/services/tab-news'
-import { format } from 'date-fns'
 
 interface BlogPostDetailsPageProps {
   params: {
@@ -13,21 +12,5 @@ export default async function BlogPostDetailsPage({
 }: BlogPostDetailsPageProps) {
   const contentOfPost = await getPostBySlug(params.slug)
 
-  const formatDateOfLastPost = format(contentOfPost.created_at, 'dd.MM.yyyy')
-
-  return (
-    <article className="lg:h-[calc(100vh-8.856rem)] h-[calc(100vh-23.55rem)] w-full relative overflow-y-scroll">
-      <h4 className="text-sm text-gray-500 mb-2">
-        {formatDateOfLastPost} - Última Postagem...
-      </h4>
-      <h1
-        className=" font-sans lg:text-3xl text-lg text-gray-900 font-bold 
-        w-full max-w-[40.375rem] lg:mb-12 mb-4"
-      >
-        {contentOfPost.title}
-      </h1>
-      <RenderMarkdown>{contentOfPost.body}</RenderMarkdown>
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-bottom-white" />
-    </article>
-  )
+  return <PostDetails {...contentOfPost} />
 }

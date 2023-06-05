@@ -1,6 +1,6 @@
 import { getAllPosts, getPostBySlug } from '@/services/tab-news'
 import React from 'react'
-import NavigationPages from './component/NavigationPages'
+import NavigationPages from './components/NavigationPages'
 
 export default async function Footer() {
   const [post] = await getAllPosts()
